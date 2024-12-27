@@ -1,8 +1,7 @@
 let message = [];
 const messageDiv = document.getElementById("message");
 async function getEvents() {
-	message.push("処理開始 ver:24");
-	messageDiv.innerHTML = message.join("<br>");
+	log("処理開始 ver:25");
 
 	let dt = new Date();
 
@@ -15,12 +14,10 @@ async function getEvents() {
 		3: [10, 11, 12, 13, 14],
 		4: [15, 16, 17, 18, 19],
 	}
-	// const enableIndex = times ? index[times] : index[1];
-	const enableIndex = index[1];
+	const enableIndex = times ? index[times] : index[1];
 
 	// パラメータ
-	message.push("パラメータ準備開始");
-	messageDiv.innerHTML = message.join("<br>");
+	log("パラメータ準備開始");
 	let url = null;
 	try {
 		const tz = "Asia/Tokyo";
@@ -37,11 +34,9 @@ async function getEvents() {
 		url = 'https://dev4.jorte.com/calendar/contracted/expo/events/-/by-datetime?' + searchParams.toString();
 		// url = 'http://localhost:9000/calendar/contracted/expo/events/-/by-datetime?' + searchParams.toString();
 	} catch(e) {
-		message.push(e);
-		messageDiv.innerHTML = message.join("<br>");
+		log(e);
 	}
-	message.push("パラメータ準備完了");
-	messageDiv.innerHTML = message.join("<br>");
+	log("パラメータ準備完了");
 
 	try {
 		const response = await fetch(url);
@@ -49,9 +44,7 @@ async function getEvents() {
 		const events = [];
 		const eventEns = [];
 
-		message.push("データ取得完了");
-		messageDiv.innerHTML = message.join("<br>");
-
+		log("データ取得完了");
 		for (let i = 0; i < data.items.length; i++) {
 			let item = data.items[i];
 			if (item.misc != null && 'enid' in item.misc) {
@@ -63,8 +56,7 @@ async function getEvents() {
 
 
 		let targetIndex = 0;
-		message.push("データ反映開始");
-		messageDiv.innerHTML = message.join("<br>");
+		log("データ反映開始");
 		for (let i = 0; i < enableIndex.length; i++) {
 			let eIndex = enableIndex[i];
 
@@ -124,8 +116,7 @@ async function getEvents() {
 			targetIndex++;
 
 		}
-		message.push("データ反映終了");
-		messageDiv.innerHTML = message.join("<br>");
+		log("データ反映終了");
 
 		let slideIndex = 0;
 		const slideInterval = 20000; // スライド間隔 (ms)
@@ -155,122 +146,15 @@ async function getEvents() {
 
 		}, slideInterval);
 
-
-		// function doSlide() {
-		// 	slideIndex++;
-		// 	message.push("doSlide関数呼び出し : " + slideIndex);
-		// 	messageDiv.innerHTML = message.join("<br>");
-
-		// 	cancelAnimationFrame(animationFrameId);
-
-		// 	// スライド切り替え処理
-		// 	const thumbContents = document.getElementsByClassName("thumb-content");
-		// 	const mainContents = document.getElementsByClassName("main-content");
-		// 	if (thumbContents.length <= slideIndex) {
-		// 		message.push("スライド処理完了 : " + slideIndex);
-		// 		messageDiv.innerHTML = message.join("<br>");
-
-		// 		return; // 処理を終了
-		// 	}
-
-		// 	thumbContents[slideIndex - 1].classList.remove("swiper-slide-thumb-active");
-		// 	thumbContents[slideIndex].classList.add("swiper-slide-thumb-active");
-
-		// 	mainContents[slideIndex - 1].classList.add("fade-out");
-		// 	mainContents[slideIndex].classList.remove("disp-none");
-		// 	mainContents[slideIndex].classList.add("fade-in");
-
-		// 	message.push("スライド切替処理完了 : " + slideIndex);
-		// 	messageDiv.innerHTML = message.join("<br>");
-
-		// 	setTimeout(() => {
-		// 		message.push("スライド処理：" + (slideIndex + 1) + "回目呼び出し");
-		// 		messageDiv.innerHTML = message.join("<br>");
-		// 		animationFrameId = requestAnimationFrame(doSlide);
-		// 	}, slideInterval);
-		// }
-
-		// setTimeout(() => {
-		// 	message.push("スライド処理：" + (slideIndex + 1) + "回目呼び出し");
-		// 	messageDiv.innerHTML = message.join("<br>");
-		// 	animationFrameId = requestAnimationFrame(doSlide);
-		// }, slideInterval);
-
 	} catch (error) {
 		console.error('エラーが発生しました:', error);
-		message.push(error);
-		messageDiv.innerHTML = message.join("<br>");
+		log(error);
 	}
 }
 
 function log(str) {
-	// setTimeout(() => {
-		message.push(str);
-		messageDiv.innerHTML = message.join("<br>");
-	// }, 0);
-}
-
-async function doSlide(slideIndex) {
-	message.push("通ってたらおかしい : doSlide");
+	message.push(str);
 	messageDiv.innerHTML = message.join("<br>");
-//   return new Promise((resolve, reject) => {
-// 	const handleSlide = function() {
-//       try {
-
-// 		message.push("ハイライト切替SetTimeout処理開始 " + slideIndex + "回目");
-// 		messageDiv.innerHTML = message.join("<br>");
-
-// 		let thumbContents = document.getElementsByClassName("thumb-content");
-
-// 		thumbContents[slideIndex - 1].classList.remove("swiper-slide-thumb-active");
-// 		thumbContents[slideIndex].classList.add("swiper-slide-thumb-active");
-
-// 		let mainContents = document.getElementsByClassName("main-content");
-// 		mainContents[slideIndex - 1].classList.add("fade-out");
-
-// 		mainContents[slideIndex].classList.remove("disp-none");
-// 		mainContents[slideIndex].classList.add("fade-in");
-
-//         resolve();
-//       } catch (error) {
-//         reject(error);
-//       }
-//     };
-
-    setTimeout(handleSlide, 20000);
-	slideIndex++;
-	if (slideIndex > 4) {
-		// slideIndex = 1;
-		cancelAnimationFrame(animationFrameId);
-	}
-
-	// スライド切り替え処理 (省略)
-	// ... (先ほどのコードと同様の処理)
-
-//   });
-}
-async function startSlideshow() {
-	message.push("通ってたらおかしい : startSlideshow");
-	messageDiv.innerHTML = message.join("<br>");
-  try {
-	// for (let i = 1; i < 5; i++) {
-    //   await doSlide(i);
-	// }
-	// message.push("スライドショー終了");
-	// messageDiv.innerHTML = message.join("<br>");
-	let slideIndex = 0;
-	const slideInterval = 2000; // スライド間隔 (ms)
-	let animationFrameId;
-
-	animationFrameId = requestAnimationFrame(doSlide);
-
-	// // スライドショーを停止する場合
-	// cancelAnimationFrame(animationFrameId);
-
-  } catch (error) {
-	message.push("エラーが発生しました:" + error);
-	messageDiv.innerHTML = message.join("<br>");
-  }
 }
 
 function getDatetime(event) {
@@ -401,6 +285,4 @@ function getSvgNumber(event) {
 	return "img/prefecture/" + prefectureNum + ".svg";
 }
 
-// document.addEventListener('DOMContentLoaded', function() {
-    getEvents();
-// })
+getEvents();
