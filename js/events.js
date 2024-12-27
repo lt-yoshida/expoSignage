@@ -128,7 +128,7 @@ async function getEvents() {
 		messageDiv.innerHTML = message.join("<br>");
 
 		let slideIndex = 0;
-		const slideInterval = 10000; // スライド間隔 (ms)
+		const slideInterval = 20000; // スライド間隔 (ms)
 
 		let intervalId = setInterval(() => {
 			slideIndex++;
