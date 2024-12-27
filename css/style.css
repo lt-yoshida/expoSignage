@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+	font-size:1.6em;
+    font-family: var(--main-font);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    font-style: normal;
+    color: #2F2F2F;
+    position: relative;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:root {
+    --main-color-red: #E60012;
+    --main-color-blue: #0068B7;
+    --btn-color-black: #2F2F2F;
+    --sub-color-gray: #D2D7DA;
+    --main-font: "Noto Sans JP", "Zen Kaku Gothic New", sans-serif;
+    --sub-font: "Shippori Mincho", serif;
+    --en-font: "IBM Plex Sans", sans-serif;
+}
+/* all */
+main{
+    width: 288rem;
+    height: 216rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/event_bg.png);
+    background-size: cover;
+	position: relative;
+}
+.eventSlot{
+    display: flex;
+}
+
+/* メインビジュアル */
+.swiper-main{
+    width: 186rem;
+    height: 209rem;
+    margin: 0;
+    padding: 6rem 11.5rem;
+    background-color: #fff;
+    border-radius: 4rem;
+	overflow: hidden;
+}
+.eventSlot .swiper-fade .swiper-slide {
+    -webkit-transition-property: opacity, -webkit-transform !important;
+    transition-property: opacity, -webkit-transform !important;
+    transition-property: opacity, transform !important;
+    transition-property: opacity, transform, -webkit-transform !important;
+    pointer-events: none;
+}
+.swiper-slide {
+	margin-bottom: 40px;
+}
+.mv-wrap {
+    width: 92rem;
+}
+.main-mv .mv{
+	display: block;
+	width: auto;
+    height: 61rem;
+    max-width: 92rem;
+    margin: 0 auto;
+}
+.main-title h2{
+    font-size: 6.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+	line-clamp: 2;
+    -webkit-line-clamp: 2;
+    line-height: 9rem;
+	font-weight: bold;
+}
+.main-title p{
+    font-size: 5.2rem;
+    font-weight: 500;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+	line-clamp: 2;
+    -webkit-line-clamp: 2;
+    line-height: 7rem;
+}
+.detail-wrap {
+	margin-left: 7vw;
+}
+.mv-detail{
+    margin-top: 4rem;
+    display: inline-flex;
+}
+.mv-detail img{
+    width: 40rem;
+}
+.mv-detail-inner {
+	margin-top: 2vw;
+}
+.mv-detail-inner p{
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+.mv-detail-inner .address{
+    font-size: 3.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.mv-detail-inner .address::before{
+    content: '';
+    background-image: url(../img/address.svg);
+    display: inline-block;
+    background-size: cover;
+    width: 5.6rem;
+    height: 8.3rem;
+    margin-right: 2.5rem;
+}
+.main-about p{
+	font-size: 4rem;
+    font-weight: 400;
+    margin-top: 6rem;
+    text-align: justify;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+/* サムネイル */
+.swiper-thumb{
+    width: 83.5rem;
+    height: 209rem;
+    margin: 0;
+    margin-right: 6rem;
+    pointer-events: none;
+    overflow: visible;
+}
+.img-wrap {
+	width: 27rem;
+}
+.thumb-media img {
+    display: block;
+	width: auto;
+    height: 18rem;
+    max-width: 27rem;
+    margin: 0 auto;
+}
+.eventSlot .thumb-media {
+    height: 100%;
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4.2rem 5rem;
+    background-color: #fff;
+    border-radius: 2.2rem;
+    height: 38.5rem;
+    width: 100%;
+    font-weight: 500;
+}
+.eventSlot .swiper-slide-thumb-active {
+    outline: 8px solid var(--main-color-red);
+    position: relative;
+    border-radius: 2.2rem;
+}
+
+.eventSlot .swiper-slide-thumb-active::after {
+    content: '';
+    position: absolute;
+    right: -3rem;
+    top: 50%;
+    bottom: 50%;
+    margin: auto 0;
+    border-color: transparent var(--main-color-red) var(--main-color-red) transparent;
+    border-width: 3rem;
+    border-radius: 0 0 1rem 0;
+    transform: scaleY(0.6) rotate(-45deg);
+}
+.thumb-title{
+    font-size: 3.9rem;
+    line-height: 1.3;
+}
+.thumb-title h2{
+    font-weight: bold;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.thumb-title p {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.thumb-about{
+    display: flex;
+    align-items: flex-end;
+
+}
+.thumb-detail {
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+.thumb-detail .date{
+    font-size: 3.2rem;
+}
+.thumb-detail .prefecture{
+	font-size: 3.8rem;
+}
+#events {
+	flex-direction: column;
+}
+.disp-none {
+	display: none;
+}
+#message {
+	/* display: none; */
+	background-color: azure;
+    position: absolute;
+    width: 20vw;
+    height: 100%;
+    top: 0;
+    right: 0;
+    opacity: 0.7;
+    font-size: 3rem;
+    padding: 1vw;
+    text-align: right;
+}
