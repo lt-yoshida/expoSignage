@@ -1,7 +1,7 @@
 let message = [];
 const messageDiv = document.getElementById("message");
 async function getEvents() {
-	message.push("処理開始 ver:23");
+	message.push("処理開始 ver:24");
 	messageDiv.innerHTML = message.join("<br>");
 
 	let dt = new Date();
