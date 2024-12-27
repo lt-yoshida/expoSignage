@@ -1,13 +1,13 @@
 let message = [];
 const messageDiv = document.getElementById("message");
 async function getEvents() {
-	log("処理開始 ver:25");
+	log("処理開始 ver:26");
 
 	let dt = new Date();
 
 	// URLSearchParamsオブジェクトを取得
 	let timeParams = new URL(window.location.href).searchParams;
-	const times = timeParams.get('times');
+	const times = timeParams.get('time');
 	const index = {
 		1: [0, 1, 2, 3, 4],
 		2: [5, 6, 7, 8, 9],
@@ -139,8 +139,9 @@ async function getEvents() {
 			thumbContents[slideIndex - 1].classList.remove("swiper-slide-thumb-active");
 			thumbContents[slideIndex].classList.add("swiper-slide-thumb-active");
 
-			mainContents[slideIndex - 1].classList.add("disp-none");
-			mainContents[slideIndex].classList.remove("disp-none");
+			$(mainContents[slideIndex - 1]).fadeOut(200, function() {
+				$(mainContents[slideIndex]).fadeIn(200);
+			});
 
 			log("スライド切替処理完了 : " + slideIndex);
 
