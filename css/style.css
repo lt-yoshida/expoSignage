@@ -132,6 +132,7 @@ main{
     text-align: justify;
     line-height: 1.2;
     letter-spacing: -1px;
+	white-space: pre-wrap;
 }
 
 /* サムネイル */
@@ -224,7 +225,7 @@ main{
 	display: none;
 }
 #message {
-	/* display: none; */
+	display: none;
 	background-color: azure;
     position: absolute;
     width: 20vw;

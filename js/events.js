@@ -95,7 +95,7 @@ async function getEvents() {
 
 			const sums = document.getElementsByClassName('summary-' + targetIndex);
 			for (let i = 0; i < sums.length; i++) {
-				sums[i].textContent = event.summary;
+				sums[i].innerHTML = event.summary;
 			}
 
 			const sumEns = document.getElementsByClassName('summary-en-' + targetIndex);
