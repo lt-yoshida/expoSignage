@@ -41,19 +41,9 @@ async function getEvents() {
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
-		const events = [];
-		const eventEns = [];
+		const events = data.items;
 
 		log("データ取得完了");
-		for (let i = 0; i < data.items.length; i++) {
-			let item = data.items[i];
-			if (item.misc != null && 'enid' in item.misc) {
-				events.push(item);
-			} else {
-				eventEns.push(item);
-			}
-		}
-
 
 		let targetIndex = 0;
 		log("データ反映開始");
@@ -64,9 +54,6 @@ async function getEvents() {
 			if (!event) {
 				continue;
 			}
-			let eventEn = eventEns.find(function(x) {
-				return x.id == event.misc.enid;
-			});
 
 			const titles = document.getElementsByClassName('title-' + targetIndex);
 			for (let i = 0; i < titles.length; i++) {
@@ -75,7 +62,7 @@ async function getEvents() {
 
 			const titleEns = document.getElementsByClassName('title-en-' + targetIndex);
 			for (let i = 0; i < titleEns.length; i++) {
-				titleEns[i].textContent = eventEn.title;
+				titleEns[i].textContent = event.misc.enEvent.title;
 			}
 
 			const imgs = document.getElementsByClassName('img-' + targetIndex);
@@ -90,24 +77,24 @@ async function getEvents() {
 
 			const locEns = document.getElementsByClassName('location-en-' + targetIndex);
 			for (let i = 0; i < locEns.length; i++) {
-				locEns[i].textContent = eventEn.location;
+				locEns[i].textContent = event.misc.enEvent.location;
 			}
 
 			const sums = document.getElementsByClassName('summary-' + targetIndex);
 			for (let i = 0; i < sums.length; i++) {
-				sums[i].innerHTML = event.summary;
+				sums[i].innerHTML = event.misc.summary;
 			}
 
 			const sumEns = document.getElementsByClassName('summary-en-' + targetIndex);
 			for (let i = 0; i < sumEns.length; i++) {
-				sumEns[i].textContent = eventEn.summary;
+				sumEns[i].textContent = event.misc.enEvent.misc.summary;
 			}
 
 			const thumbDT = document.getElementById('thumb-datetime-' + targetIndex);
 			thumbDT.textContent = getDatetime(event);
 
 			const thumbPre = document.getElementById('thumb-prefecture-' + targetIndex);
-			thumbPre.textContent = getPrefecture(event, eventEn);
+			thumbPre.textContent = getPrefecture(event);
 
 			const mapSvg = document.getElementById('map-svg-' + targetIndex);
 			mapSvg.src = getSvgNumber(event);
@@ -162,7 +149,7 @@ function getDatetime(event) {
 	return event.begin.date.replace(/\//g, '-') + "～" + event.end.date.replace(/\//g, '-');
 }
 
-function getPrefecture(event, eventEn) {
+function getPrefecture(event) {
 
 	const targetWord = '地域';
 
