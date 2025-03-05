@@ -47,7 +47,7 @@ main{
     width: 186rem;
     height: 209rem;
     margin: 0;
-    padding: 6rem 11.5rem;
+	padding: 3rem 7rem;
     background-color: #fff;
     border-radius: 4rem;
 	overflow: hidden;
@@ -63,7 +63,8 @@ main{
 	margin-bottom: 40px;
 }
 .mv-wrap {
-    width: 92rem;
+	width: 112rem;
+    height: auto;
 }
 .main-mv .mv{
 	display: block;
@@ -90,20 +91,20 @@ main{
     -webkit-box-orient: vertical;
 	line-clamp: 2;
     -webkit-line-clamp: 2;
-    line-height: 7rem;
+    line-height: 5.5rem;
 }
 .detail-wrap {
-	margin-left: 7vw;
+	margin-left: 1vw;
 }
 .mv-detail{
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: inline-flex;
 }
 .mv-detail img{
     width: 40rem;
 }
 .mv-detail-inner {
-	margin-top: 2vw;
+	margin-top: 1vw;
 }
 .mv-detail-inner p{
     font-size: 3.2rem;
@@ -125,14 +126,23 @@ main{
     height: 8.3rem;
     margin-right: 2.5rem;
 }
-.main-about p{
-	font-size: 3.5rem;
+.main-about-text {
+	font-size: 4rem;
     font-weight: 400;
-    margin-top: 6rem;
+    margin-top: 2rem;
     text-align: justify;
-    line-height: 4rem;
+    line-height: 1.2;
     letter-spacing: -1px;
-	white-space: pre-wrap;
+	white-space: pre-line
+}
+.main-about-text-en {
+	font-size: 4rem;
+    font-weight: 400;
+    margin-top: 5rem;
+    text-align: justify;
+    line-height: 1.2;
+    letter-spacing: -1px;
+	white-space: pre-line
 }
 
 /* サムネイル */
@@ -221,8 +231,31 @@ main{
 #events {
 	flex-direction: column;
 }
+.fade-in {
+	animation-name: my-fade-in;
+	animation-duration: 2s;
+	display: grid;
+}
 .disp-none {
+	animation-name: my-fade-out;
+	animation-duration: 2s;
 	display: none;
+}
+@keyframes my-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes my-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 #message {
 	display: none;

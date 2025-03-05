@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expo2025サイネージ イベント枠</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/swiper.min.css"> -->
+    <link rel="stylesheet" href="css/style.css?v=23">
+</head>
+
+<body>
+    <main>
+        <div class="eventSlot">
+            <!-- サムネイル -->
+            <div class="swiper swiper-thumb">
+                <div id="events" class="swiper-wrapper">
+					<!-- 記事0サムネイル -->
+                    <div class="swiper-slide thumb-content swiper-slide-thumb-active">
+                        <div class="thumb-media">
+                            <div class="thumb-title">
+                                <h2 class="title-0 title"></h2>
+                                <p class="title-en-0 title"></p>
+                            </div>
+                            <div class="thumb-about">
+								<div class="img-wrap">
+									<img class="img-0" src="" alt="">
+								</div>
+                                <div class="thumb-detail">
+                                    <p id="thumb-datetime-0" class="date"></p>
+                                    <p id="thumb-prefecture-0" class="prefecture"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 記事1サムネイル -->
+                    <div class="swiper-slide thumb-content">
+                        <div class="thumb-media">
+                            <div class="thumb-title">
+                                <h2 class="title-1"></h2>
+                                <p class="title-en-1"></p>
+                            </div>
+                            <div class="thumb-about">
+								<div class="img-wrap">
+									<img class="img-1" src="" alt="">
+								</div>
+                                <div class="thumb-detail">
+                                    <p id="thumb-datetime-1" class="date"></p>
+                                    <p id="thumb-prefecture-1" class="prefecture"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 記事2サムネイル -->
+                    <div class="swiper-slide thumb-content">
+                        <div class="thumb-media">
+                            <div class="thumb-title">
+                                <h2 class="title-2"></h2>
+                                <p class="title-en-2"></p>
+                            </div>
+                            <div class="thumb-about">
+								<div class="img-wrap">
+									<img class="img-2" src="" alt="">
+								</div>
+                                <div class="thumb-detail">
+                                    <p id="thumb-datetime-2" class="date"></p>
+                                    <p id="thumb-prefecture-2" class="prefecture"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 記事3サムネイル -->
+                    <div class="swiper-slide thumb-content">
+                        <div class="thumb-media">
+                            <div class="thumb-title">
+                                <h2 class="title-3"></h2>
+                                <p class="title-en-3"></p>
+                            </div>
+                            <div class="thumb-about">
+								<div class="img-wrap">
+									<img class="img-3" src="" alt="">
+								</div>
+                                <div class="thumb-detail">
+                                    <p id="thumb-datetime-3" class="date"></p>
+                                    <p id="thumb-prefecture-3" class="prefecture"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 記事4サムネイル -->
+                    <div class="swiper-slide thumb-content">
+                        <div class="thumb-media">
+                            <div class="thumb-title">
+                                <h2 class="title-4"></h2>
+                                <p class="title-en-4"></p>
+                            </div>
+                            <div class="thumb-about">
+								<div class="img-wrap">
+									<img class="img-4" src="" alt="">
+								</div>
+                                <div class="thumb-detail">
+                                    <p id="thumb-datetime-4" class="date"></p>
+                                    <p id="thumb-prefecture-4" class="prefecture"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- サムネイル -->
+            <!-- メインビジュアル -->
+            <div class="swiper swiper-main">
+                <div class="swiper-wrapper">
+                    <!-- 記事0内容 -->
+                    <div class="swiper-slide main-content">
+                        <figure class="slide">
+                            <div class="main-mv">
+                                <div class="mv-about">
+                                    <div class="main-title">
+                                        <h2 class="title-0"></h2>
+                                        <p class="title-en-0"></p>
+                                    </div>
+                                </div>
+                                <div class="mv-detail">
+									<div class="mv-wrap">
+										<img class="img-0 mv" src="" alt="">
+									</div>
+									<div class="detail-wrap">
+										<img id="map-svg-0" src="" alt="">
+										<div class="mv-detail-inner">
+											<p class="address">会場 / Location</p>
+											<p class="location-0"></p>
+											<p class="location-en-0"></p>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="main-about">
+                                <p class="main-about-text summary-0"></p>
+                                <p class="main-about-text-en summary-en-0"></p>
+                            </div>
+                        </figure>
+                    </div>
+                    <!-- 記事1内容 -->
+                    <div class="swiper-slide main-content disp-none">
+                        <figure class="slide">
+                            <div class="main-mv">
+                                <div class="mv-about">
+                                    <div class="main-title">
+                                        <h2 class="title-1"></h2>
+                                        <p class="title-en-1"></p>
+                                    </div>
+                                </div>
+                                <div class="mv-detail">
+									<div class="mv-wrap">
+										<img class="img-1 mv" src="" alt="">
+									</div>
+									<div class="detail-wrap">
+										<img id="map-svg-1" src="" alt="">
+										<div class="mv-detail-inner">
+											<p class="address">会場 / Location</p>
+											<p class="location-1"></p>
+											<p class="location-en-1"></p>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="main-about">
+                                <p class="main-about-text summary-1"></p>
+                                <p class="main-about-text-en summary-en-1"></p>
+                            </div>
+                        </figure>
+                    </div>
+                    <!-- 記事2内容 -->
+                    <div class="swiper-slide main-content disp-none">
+                        <figure class="slide">
+                            <div class="main-mv">
+                                <div class="mv-about">
+                                    <div class="main-title">
+                                        <h2 class="title-2"></h2>
+                                        <p class="title-en-2"></p>
+                                    </div>
+                                </div>
+                                <div class="mv-detail">
+									<div class="mv-wrap">
+										<img class="img-2 mv" src="" alt="">
+									</div>
+									<div class="detail-wrap">
+										<img id="map-svg-2" src="" alt="">
+										<div class="mv-detail-inner">
+											<p class="address">会場 / Location</p>
+											<p class="location-2"></p>
+											<p class="location-en-2"></p>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="main-about">
+                                <p class="main-about-text summary-2"></p>
+                                <p class="main-about-text-en summary-en-2"></p>
+                            </div>
+                        </figure>
+                    </div>
+                    <!-- 記事3内容 -->
+                    <div class="swiper-slide main-content disp-none">
+                        <figure class="slide">
+                            <div class="main-mv">
+                                <div class="mv-about">
+                                    <div class="main-title">
+                                        <h2 class="title-3"></h2>
+                                        <p class="title-en-3"></p>
+                                    </div>
+                                </div>
+                                <div class="mv-detail">
+									<div class="mv-wrap">
+										<img class="img-3 mv" src="" alt="">
+									</div>
+									<div class="detail-wrap">
+										<img id="map-svg-3" src="" alt="">
+										<div class="mv-detail-inner">
+											<p class="address">会場 / Location</p>
+											<p class="location-3"></p>
+											<p class="location-en-3"></p>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="main-about">
+                                <p class="main-about-text summary-3"></p>
+                                <p class="main-about-text-en summary-en-3"></p>
+                            </div>
+                        </figure>
+                    </div>
+                    <!-- 記事4内容 -->
+                    <div class="swiper-slide main-content disp-none">
+                        <figure class="slide">
+                            <div class="main-mv">
+                                <div class="mv-about">
+                                    <div class="main-title">
+                                        <h2 class="title-4"></h2>
+                                        <p class="title-en-4"></p>
+                                    </div>
+                                </div>
+                                <div class="mv-detail">
+									<div class="mv-wrap">
+										<img class="img-4 mv" src="" alt="">
+									</div>
+									<div class="detail-wrap">
+										<img id="map-svg-4" src="" alt="">
+										<div class="mv-detail-inner">
+											<p class="address">会場 / Location</p>
+											<p class="location-4"></p>
+											<p class="location-en-4"></p>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            <div class="main-about">
+                                <p class="main-about-text summary-4"></p>
+                                <p class="main-about-text-en summary-en-4"></p>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div><!-- メインビジュアル -->
+        </div>
+		<div id="message"></div>
+    </main>
+    <!-- js -->
+	<script src="js/events.js?v=23"></script>
+</body>
+
+</html>
